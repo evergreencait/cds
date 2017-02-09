@@ -50,6 +50,13 @@ namespace cds
         model.Add("artist", selectedArtist);
         return View["artist.cshtml", model];
       };
+      Get["/search_by_artist"] = _ => {
+        return View["search_by_artist.cshtml"];
+      };
+      Post["/search_by_artist"] = _ => {
+        var allArtists = Artist.GetAll();
+        return View["search_by_artists.cshtml", allArtists];
+      };
     }
   }
 }

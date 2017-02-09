@@ -44,5 +44,16 @@ namespace cds.Objects
     {
       return _instances[searchId-1];
     }
+    public static Artist SearchByName(string searchName)
+    {
+      foreach (Artist currentArtist in _instances)
+      {
+          if(currentArtist.GetName() == searchName)
+          {
+            return currentArtist;
+          }
+      }
+      return null;
+    }
   }
 }
