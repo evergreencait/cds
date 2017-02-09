@@ -1,0 +1,8 @@
+<h1>List of Albums</h1>
+<ul>
+  @foreach (var album in Model)
+  {
+    <li><a href='/albums/@album.GetId()'>@album.GetDescription()</a></li>
+  }
+</ul>
+<a href='/albums/new'>Add a new album</a>

@@ -1,0 +1,9 @@
+<h3>Here are all the albums in the artist category:</h3>
+<ol>
+  @foreach (var task in @Model["albums"])
+  {
+    <li>@task.GetDescription()</li>
+  }
+</ol>
+<p><a href='/artists/@Model["artist"].GetId()/albums/new'>Add a new album</a></p>
+<p><a href='/'>Return to the Main Page</a></p>
