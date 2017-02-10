@@ -51,11 +51,11 @@ namespace cds
         return View["artist.cshtml", model];
       };
       Get["/search_by_artist"] = _ => {
-        return View["search_by_artist.cshtml"];
+          return View["search_by_artist.cshtml"];
       };
-      Post["/search_by_artist"] = _ => {
-        var allArtists = Artist.GetAll();
-        return View["search_by_artists.cshtml", allArtists];
+      Post["/search_results"] = _ => {
+        Artist foundArtist = Artist.SearchByName(Request.Form["search-artist"]);
+        return View["search_results.cshtml", foundArtist];
       };
     }
   }

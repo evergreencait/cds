@@ -1,0 +1,10 @@
+<h1>Search Results</h1>
+  @if(@Model != null) {
+    <ol>
+    <li>@Model.GetName()</li>
+    </ol>
+  } else {
+    <h2>No Artist Found</h2>
+  }
+
+<p><a href="/">Go Back Home</a></p>
